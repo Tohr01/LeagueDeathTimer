@@ -15,6 +15,7 @@ struct DeathTimer: View {
     @State var riotID: String = "RiotID"
     @State var respawnTimer: Int? = nil
     @State var championName: String = "Champion Name"
+    @State var numberOfDeaths: Int? = nil
     var body: some View {
         ZStack {
             GeometryReader(content: { _ in
@@ -56,6 +57,11 @@ struct DeathTimer: View {
                     Text(championName)
                         .font(.custom("BeaufortforLOL-Bold", size: 30))
                         .foregroundStyle(.white)
+                    if numberOfDeaths ?? 0 > 0 {
+                        Text("Diggah du bist jetzt schon das \(numberOfDeaths ?? 0). mal verreckt lol")
+                            .font(.custom("BeaufortforLOL-Bold", size: 14))
+                            .foregroundColor(Color.white)
+                    }
                 })
                 Spacer()
             }
@@ -77,6 +83,8 @@ struct DeathTimer: View {
                 } else {
                     respawnTimer = nil
                 }
+                numberOfDeaths = await getNumberOfDeaths(riotID: riotID)
+
                 try? await Task.sleep(nanoseconds: 1_000_000_000)
             }
         }

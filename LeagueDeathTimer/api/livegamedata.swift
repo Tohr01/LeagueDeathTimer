@@ -33,6 +33,16 @@ func getRespawnTimer(riotID: String) async -> Float? {
     return playerDict["respawnTimer"] as? Float
 }
 
+func getNumberOfDeaths(riotID: String) async -> Int? {
+    guard let playerDict = await getCurrentPlayerInformationDict(riotID: riotID) else {
+        return nil
+    }
+    guard let scores = playerDict["scores"] as? [String: Any],
+          let deaths = scores["deaths"] as? Int
+    else { return nil }
+    return deaths
+}
+
 private func getCurrentPlayerInformationDict(riotID: String) async -> [String: Any]? {
     guard let dict = await makeLiveGameDataRequest(urlStr: "https://127.0.0.1:2999/liveclientdata/playerlist") as? [[String: Any]] else {
         return nil

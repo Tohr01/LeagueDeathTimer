@@ -6,18 +6,18 @@
 // Copyright © 2024 Tohr01. All rights reserved.
 //
 
+import Cocoa
 import LaunchAtLogin
 import SwiftUI
-import Cocoa
 
 var appDelegate = AppDelegate()
 
 class AppDelegate: NSObject, NSApplicationDelegate {
     // Window containing DeathTimer view
-    var deathtimerwindow: NSWindow?
-    
+    private var deathtimerwindow: NSWindow?
+
     // Status item displayed in top bar
-    var statusItem: NSStatusItem?
+    private var statusItem: NSStatusItem?
 
     static var gameClientBundleID = "com.riotgames.LeagueofLegends.GameClient"
 
@@ -74,7 +74,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
 
-    func waitForGameClientReady() {
+    private func waitForGameClientReady() {
         // Wait for api to return information
         Task {
             while await getActivePlayerRiotID() == nil {
@@ -102,17 +102,18 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let contentView = DeathTimer()
 
         deathtimerwindow = NSWindow(contentRect: NSRect(x: 0, y: 0, width: 517, height: 138), styleMask: [], backing: .buffered, defer: false)
-        deathtimerwindow?.isMovableByWindowBackground = true
-        deathtimerwindow?.isReleasedWhenClosed = false
-        deathtimerwindow?.center()
-        deathtimerwindow?.setIsVisible(false)
-        deathtimerwindow?.makeKeyAndOrderFront(nil)
-        deathtimerwindow?.contentView = NSHostingView(rootView: contentView)
-        deathtimerwindow?.level = NSWindow.Level.screenSaver
+        guard let deathtimerwindow else { return }
+        deathtimerwindow.isMovableByWindowBackground = true
+        deathtimerwindow.isReleasedWhenClosed = false
+        deathtimerwindow.center()
+        deathtimerwindow.setIsVisible(false)
+        deathtimerwindow.makeKeyAndOrderFront(nil)
+        deathtimerwindow.contentView = NSHostingView(rootView: contentView)
+        deathtimerwindow.level = NSWindow.Level.screenSaver
         if let winOriginX = UserDefaults.standard.value(forKey: "winOriginX") as? CGFloat, let winOriginY = UserDefaults.standard.value(forKey: "winOriginY") as? CGFloat {
             print(winOriginX, winOriginY)
             let frameOrigin = CGPoint(x: winOriginX, y: winOriginY)
-            deathtimerwindow?.setFrameOrigin(frameOrigin)
+            deathtimerwindow.setFrameOrigin(frameOrigin)
         }
     }
 
@@ -122,7 +123,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             UserDefaults.standard.set(winOrigin.x, forKey: "winOriginX")
             UserDefaults.standard.set(winOrigin.y, forKey: "winOriginY")
         }
-        
+
         deathtimerwindow?.close()
         deathtimerwindow = nil
     }
