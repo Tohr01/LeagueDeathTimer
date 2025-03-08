@@ -62,6 +62,7 @@ struct DeathTimer: View {
             .padding(15)
         }
         .frame(width: 517, height: 138)
+        .cornerRadius(10)
         .task {
             if let playerRiotID = await getActivePlayerRiotID() {
                 riotID = playerRiotID

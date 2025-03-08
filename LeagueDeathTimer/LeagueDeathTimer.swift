@@ -137,6 +137,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let contentView = DeathTimer()
 
         deathtimerwindow = NSWindow(contentRect: NSRect(x: 0, y: 0, width: 517, height: 138), styleMask: [], backing: .buffered, defer: false)
+        deathtimerwindow?.backgroundColor = NSColor.clear
         deathtimerwindow?.isMovableByWindowBackground = true
         deathtimerwindow?.isReleasedWhenClosed = false
         deathtimerwindow?.center()
