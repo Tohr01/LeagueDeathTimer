@@ -12,7 +12,7 @@ You can easiliy access the application in the menu status bar.
 - Xcode (If you want it to compile it yourself)
 - League of Legends (Might be obvious)
 > [!NOTE]  
-> You might need to right-click open the app in order to trust it
+> You might need to right-click open the app in order to trust it or run `xattr -d com.apple.quarantine LeagueDeathTimer.app` on the app bundle.
 
 ## ⚙️ Custom configuration
 The application uses the LCU-Endpoints to determine your language (locale; e.g. en_GB) in order to correctly display your champ as a background.<br><br>
