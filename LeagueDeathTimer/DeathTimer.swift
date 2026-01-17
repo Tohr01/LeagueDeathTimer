@@ -75,6 +75,10 @@ struct DeathTimer: View {
             while gameClientRunning() {
                 if let timer = await getRespawnTimer(riotID: riotID) {
                     respawnTimer = Int(timer.rounded(.down))
+                    // If the respawn timer is below 2 seconds activate the game client
+                    if let respawnTimer = respawnTimer, respawnTimer <= 2, let app = NSRunningApplication.runningApplications(withBundleIdentifier: AppDelegate.gameClientBundleID).first {
+                        app.activate()
+                    }
                 } else {
                     respawnTimer = nil
                 }

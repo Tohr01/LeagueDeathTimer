@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		C3762BE12D643625004C90EA /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = C3762BE02D643625004C90EA /* LaunchAtLogin */; };
 		C381E0F62D5FFDA200BC5F93 /* wallpaper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C381E0F52D5FFD9E00BC5F93 /* wallpaper.swift */; };
-		C381E0F82D60309E00BC5F93 /* screenpositions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C381E0F72D60309600BC5F93 /* screenpositions.swift */; };
 		C3B9D25D2CD8012300BF00D7 /* LeagueDeathTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B9D25C2CD8012300BF00D7 /* LeagueDeathTimer.swift */; };
 		C3B9D25F2CD8012300BF00D7 /* DeathTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B9D25E2CD8012300BF00D7 /* DeathTimer.swift */; };
 		C3B9D2612CD8012600BF00D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3B9D2602CD8012600BF00D7 /* Assets.xcassets */; };
@@ -24,7 +23,6 @@
 
 /* Begin PBXFileReference section */
 		C381E0F52D5FFD9E00BC5F93 /* wallpaper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wallpaper.swift; sourceTree = "<group>"; };
-		C381E0F72D60309600BC5F93 /* screenpositions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = screenpositions.swift; sourceTree = "<group>"; };
 		C3B9D2592CD8012300BF00D7 /* LeagueDeathTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LeagueDeathTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3B9D25C2CD8012300BF00D7 /* LeagueDeathTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueDeathTimer.swift; sourceTree = "<group>"; };
 		C3B9D25E2CD8012300BF00D7 /* DeathTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeathTimer.swift; sourceTree = "<group>"; };
@@ -103,7 +101,6 @@
 			isa = PBXGroup;
 			children = (
 				C3FD56762D6AA6A700C1FBCE /* lcu.swift */,
-				C381E0F72D60309600BC5F93 /* screenpositions.swift */,
 				C381E0F52D5FFD9E00BC5F93 /* wallpaper.swift */,
 				C3B9D2712CD811B200BF00D7 /* livegamedata.swift */,
 				C3B9D2742CD83BCE00BF00D7 /* urlsessiondelegate.swift */,
@@ -189,7 +186,6 @@
 			files = (
 				C3B9D25F2CD8012300BF00D7 /* DeathTimer.swift in Sources */,
 				C3B9D2752CD83BCE00BF00D7 /* urlsessiondelegate.swift in Sources */,
-				C381E0F82D60309E00BC5F93 /* screenpositions.swift in Sources */,
 				C381E0F62D5FFDA200BC5F93 /* wallpaper.swift in Sources */,
 				C3DAA5142CD973290093BFCC /* datadragon.swift in Sources */,
 				C3B9D25D2CD8012300BF00D7 /* LeagueDeathTimer.swift in Sources */,
