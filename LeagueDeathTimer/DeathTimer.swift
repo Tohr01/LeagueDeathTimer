@@ -42,7 +42,10 @@ struct DeathTimer: View {
                             .aspectRatio(contentMode: .fit)
                             .foregroundStyle(.white)
                     } else {
-                        Text(respawnTimer!.description)
+                        let minutes = (respawnTimer ?? 00) / 60
+                        let seconds = (respawnTimer ?? 00) % 60
+
+                        Text("\(minutes > 0 ? "\(minutes)\n" : "")\(seconds)")
                             .font(.custom("BeaufortforLOL-Bold", size: 35))
                             .foregroundStyle(.white)
                     }
